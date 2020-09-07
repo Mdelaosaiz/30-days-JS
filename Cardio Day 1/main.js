@@ -100,3 +100,16 @@ const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick
 // 7. Reduce Exercise
 // Sum up the instances of each of these
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+const transports = data.reduce (function(transport, item){
+  // si no se repite el item (el medio de transporte), empezamos la cuenta
+  if (!transport[item]){
+    transport[item] = 0;
+  }
+  //cada vez que salga un item que ya está, se suma al anterior
+  transport[item] ++;
+  return transport;
+  //creamos un objeto vacío donde poner los items (porque puede que no sepamos cuántos hay)
+}, {});
+
+console.log(transports);
